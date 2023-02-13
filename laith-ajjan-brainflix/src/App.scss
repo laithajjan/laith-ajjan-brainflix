@@ -1,0 +1,51 @@
+@use './styles/partials/mixins'as *;
+@use './styles/partials/variables'as *;
+
+@font-face {
+    font-family: "avenir";
+    src: url("../src/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "avenir";
+    src: url("../src/assets/fonts/AvenirNextLTPro.ttf") format("ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "avenir";
+    src: url("../src/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+    font-weight: 700;
+}
+
+html {
+    font-family: "avenir";
+}
+
+hr {
+        border: 1px solid $mercury;
+        padding: 0;
+        @include tablet {
+            margin: 0 2rem 0 2rem;
+        }
+        @include desktop {
+            margin: 0 0 2rem 2rem;
+        }
+}
+.main {
+    &__right {
+        @include desktop {
+            width: 35%;
+            border-left: 2px solid $mercury;
+        }
+    }
+    &__left {
+        @include desktop {
+            width: 65%;
+        }
+    }
+    @include desktop {
+        display: flex;
+    }
+}

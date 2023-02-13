@@ -1,0 +1,131 @@
+.comments {
+  margin: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .comments {
+    margin: 1rem 2rem 1rem 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments {
+    margin: 1rem 3rem 1rem 3rem;
+  }
+}
+.comments__count {
+  font-weight: bold;
+}
+.comments__form {
+  border-bottom: 2px solid #E1E1E1;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .comments__form {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.comments__form--input-wrap-big {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .comments__form--input-wrap-big {
+    width: 70%;
+  }
+}
+.comments__form--logo {
+  height: 2.5rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-top: 1.8rem;
+}
+.comments__form--label {
+  color: #AFAFAF;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.comments__form--wrap {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .comments__form--wrap {
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+  }
+}
+.comments__form--input {
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+  font-family: "avenir";
+  background-color: #FAFAFA;
+  resize: none;
+  width: 95%;
+  height: 5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .comments__form--input {
+    width: 90%;
+    height: 1.25rem;
+  }
+}
+.comments__form--button {
+  background-color: #0095FF;
+  color: white;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  border: none;
+  font-family: "avenir";
+  font-size: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .comments__form--button {
+    width: 35%;
+    margin-top: 0.8rem;
+  }
+}
+.comments__wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #E1E1E1;
+}
+.comments__wrap--circle {
+  height: 2.5rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin: 1rem 1.5rem 0 0;
+  background-color: #E1E1E1;
+}
+.comments__wrap--top {
+  display: flex;
+  justify-content: space-between;
+}
+.comments__wrap--right {
+  width: 85%;
+}
+.comments__wrap--date {
+  color: #E1E1E1;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.comments__wrap--comment {
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+}
+.comments__wrap--name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}/*# sourceMappingURL=comments.css.map */

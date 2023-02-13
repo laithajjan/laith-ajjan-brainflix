@@ -1,0 +1,71 @@
+.video-next {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .video-next {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .video-next {
+    width: 100%;
+  }
+}
+
+.video-next__header {
+  color: #AFAFAF;
+  font-size: 0.9rem;
+  margin: 1rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .video-next__header {
+    margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .video-next__header {
+    margin-left: 3rem;
+  }
+}
+
+.video-next__list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .video-next__list {
+    margin: 1rem 2rem 1rem 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .video-next__list {
+    margin: 1rem 3rem 1rem 3rem;
+  }
+}
+.video-next__list--thumbnail {
+  width: 35%;
+  height: 7rem;
+  border-radius: 4px;
+  background-color: #E1E1E1;
+}
+.video-next__list--aside {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 60%;
+  height: 7rem;
+}
+.video-next__list--aside-title {
+  margin: 0.4rem 0 0.4rem 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.video-next__list--aside-author {
+  margin: 0.4rem 0 0.4rem 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+}/*# sourceMappingURL=video-gallery.css.map */

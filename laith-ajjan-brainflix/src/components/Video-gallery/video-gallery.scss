@@ -1,0 +1,61 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/variables'as *;
+
+.video-next {
+    width: 100%;
+    @include tablet {
+        width: 60%;
+    }
+    @include desktop {
+        width: 100%;
+    }
+}
+
+.video-next__header {
+    color: $silver;
+    font-size: 0.9rem;
+    margin: 1rem;
+    font-weight: bold;
+    @include tablet {
+        margin-left: 2rem;
+    }
+    @include desktop {
+        margin-left: 3rem;
+    }
+}
+.video-next__list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+    @include tablet {
+        margin: 1rem 2rem 1rem 2rem;
+    }
+    @include desktop {
+        margin: 1rem 3rem 1rem 3rem;
+    }
+    &--thumbnail {
+        width: 35%;
+        height: 7rem; 
+        border-radius: 4px;
+        background-color: $mercury;
+    }
+    &--aside {
+        padding-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 60%;
+        height: 7rem;
+        &-title {
+            margin: 0.4rem 0 0.4rem 0;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        &-author {
+            margin: 0.4rem 0 0.4rem 0;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+     }
+}

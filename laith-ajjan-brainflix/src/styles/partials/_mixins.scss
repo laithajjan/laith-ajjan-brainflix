@@ -1,0 +1,46 @@
+@use './variables'as *;
+
+$tablet-size: 768px;
+$desktop-size: 1280px;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-size) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-size) {
+        @content;
+    }
+}
+
+@mixin date-like-views {
+        color: $mercury;
+        font-weight: 400;
+        font-size: 1.2rem;
+}
+@mixin button {
+        background-color: $brainflix-blue;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 40px;
+        border: none;
+        font-family: "avenir";
+        font-size: 1rem;
+        width: 100%;
+}
+@mixin input {
+        border-radius: 4px;
+        border: 1px solid #E1E1E1;
+        font-family: "avenir";
+        background-color: #FAFAFA;
+}
+@mixin avatar {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+}

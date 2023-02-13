@@ -1,0 +1,15 @@
+.video__hero {
+  width: 100%;
+  height: 17rem;
+  background-color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .video__hero {
+    height: 22rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .video__hero {
+    height: 27rem;
+  }
+}/*# sourceMappingURL=video.css.map */

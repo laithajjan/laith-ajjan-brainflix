@@ -1,0 +1,17 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/variables'as *;
+
+.video {
+   
+    &__hero {
+        width: 100%;
+        height: 17rem;
+        background-color: $brainflix-darkblack;
+        @include tablet {
+            height: 22rem;
+        }
+        @include desktop {
+            height: 35rem;
+        }
+    }
+  }

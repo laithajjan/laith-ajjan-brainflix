@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "avenir";
+  src: url("../src/assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../src/assets/fonts/AvenirNextLTPro.ttf") format("ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../src/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-family: "avenir";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+hr {
+  border: 1px solid #E1E1E1;
+  margin: 0 1rem 0 1rem;
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  hr {
+    margin: 0 2rem 0 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  hr {
+    margin: 0 3rem 0 3rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (min-width: 1280px) {
+  .main__right {
+    width: 35%;
+    border-left: 2px solid #E1E1E1;
   }
 }
+@media screen and (min-width: 1280px) {
+  .main__left {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main {
+    display: flex;
+  }
+}/*# sourceMappingURL=app.css.map */

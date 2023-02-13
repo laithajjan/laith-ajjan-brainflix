@@ -1,0 +1,92 @@
+@use '../../styles/partials/mixins'as *;
+@use '../../styles/partials/variables'as *;
+
+@font-face {
+    font-family: "avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+    font-weight: 700;
+}
+
+.description {
+    font-family: "avenir";
+    
+    @include desktop {
+        margin: 1rem 0rem 1rem 7rem;
+    }
+    &__title {
+        margin: 1rem;
+        font-weight: 700;
+        @include tablet {
+            margin: 1rem 2rem 0 2rem;
+            font-size: 2.2rem;
+        }
+    }
+    &__break-small {
+        @include tablet {
+            display: none;
+        }
+    }
+    &__info {
+        margin: 0 1rem 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        @include tablet {
+            flex-direction: row;
+            margin: 0 2rem 0 2rem;
+        }
+        &--views {
+            width: 8rem;
+            @include date-like-views;
+        }
+        &--likes {
+            width: 8rem;
+            @include date-like-views;
+        }
+        &--logo {
+            margin-right: 1rem;
+        }
+        &--left {
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 18rem;
+        }
+        }
+        &--right {
+            margin-right: 3rem;
+            @include tablet {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 18rem;
+                margin: 0;
+        }
+        }
+    &--date {
+        @include date-like-views;
+        }
+    }
+    &__story {
+        margin: 1.5rem;
+        font-weight: 400;
+        @include tablet {
+            margin: 1rem 2rem 1rem 2rem;
+        }
+
+    }
+        
+}
