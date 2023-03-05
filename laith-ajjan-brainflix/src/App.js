@@ -1,48 +1,23 @@
 import Header from './components/Header/header';
-import Video from './components/Video/video';
-import VideoGallery from './components/Video-gallery/video-gallery';
 import './App.scss';
 import { Component } from "react";
-import VideoDetails from "../src/data/video-details.json"
-import sideVideos from "../src/data/videos.json"
-import Description from './components/Description/description';
-import Comments from './components/Comments/comments';
-
-const videoList = [...sideVideos];
-videoList.shift();
+import UploadPage from './pages/Upload/upload';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom/cjs/react-router-dom.min';
+import HomePage from './components/Home/home-page';
 
 class App extends Component {
-
-    state = {
-      videoSuggest: videoList,
-      chosenVideo: VideoDetails[0],
-    };
-
-    showNextVideo = (id) => {
-      const videoHero = VideoDetails.filter((video) => video.id === id);
-      const chosenVideo = videoHero[0];
-      const videoList = sideVideos.filter((video) => video.id !== id);
-      this.setState({
-        videoSuggest: videoList,
-        chosenVideo: chosenVideo,
-      });
-    };
-
 
 render () {
   return (
     <div>
+      <BrowserRouter>
       <Header />
-      <Video chosenVideo={this.state.chosenVideo}/>
-      <section className='main'>
-        <section className='main__left'>
-          <Description chosenVideo={this.state.chosenVideo}/>
-          <Comments chosenVideo={this.state.chosenVideo}/>
-        </section>
-        <section className='main__right'>  
-          <VideoGallery VideoDetails={this.state.videoSuggest} showNextVideo={this.showNextVideo}/>
-        </section>
-      </section>
+      <Switch>
+        <Route path='/' exact component={HomePage}/>
+        <Route path='/upload' exact component={UploadPage}/>
+        <Route path='/home/:id' component={HomePage}></Route>
+      </Switch>
+      </BrowserRouter>
     </div>
   );}
 }

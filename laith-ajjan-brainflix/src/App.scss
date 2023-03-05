@@ -1,5 +1,5 @@
-@use './styles/partials/mixins'as *;
-@use './styles/partials/variables'as *;
+@use './styles/partials/mixins' as *;
+@use './styles/partials/variables' as *;
 
 @font-face {
     font-family: "avenir";
@@ -24,15 +24,18 @@ html {
 }
 
 hr {
-        border: 1px solid $mercury;
-        padding: 0;
-        @include tablet {
-            margin: 0 2rem 0 2rem;
-        }
-        @include desktop {
-            margin: 0 0 2rem 2rem;
-        }
+    border: 1px solid $mercury;
+    padding: 0;
+
+    @include tablet {
+        margin: 0 2rem 0 2rem;
+    }
+
+    @include desktop {
+        margin: 0 0 2rem 2rem;
+    }
 }
+
 .main {
     &__right {
         @include desktop {
@@ -40,12 +43,19 @@ hr {
             border-left: 2px solid $mercury;
         }
     }
+
     &__left {
         @include desktop {
             width: 65%;
         }
     }
+
     @include desktop {
         display: flex;
     }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

@@ -1,0 +1,152 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.top-border {
+    margin: 0;
+}
+
+.upload {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        margin: 0 2rem 0 2rem;
+    }
+
+    @include desktop {
+        margin: 0 3rem 0 3rem;
+    }
+
+    &__border {
+        display: none;
+
+        @include tablet {
+            display: flex;
+            width: 100%;
+            margin: 1.5rem 0 1rem 0;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 500;
+    }
+
+    &__hero {
+        @include tablet {
+            width: 50%;
+        }
+
+        @include desktop {
+            display: none;
+        }
+
+        &--img {
+            width: 100%;
+            border-radius: 4px;
+
+            @include desktop {
+                height: 13rem;
+            }
+        }
+
+        &--title {
+            @include date-like-views;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {}
+
+        &--wrap-desktop {
+            display: flex;
+            flex-direction: column;
+
+            @include desktop {
+                flex-direction: row;
+            }
+        }
+
+        &--input-desktop {
+            display: flex;
+            flex-direction: column;
+
+            @include desktop {
+                width: 100%;
+                margin-left: 2rem;
+            }
+        }
+
+        &--hero-desktop {
+            display: none;
+
+            @include desktop {
+                display: flex;
+                flex-direction: column;
+                width: 35%
+            }
+        }
+
+        &--label {
+            @include date-like-views;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        &--input {
+            @include input;
+            height: 2.5rem;
+            padding-left: 1rem;
+        }
+
+        &--textarea {
+            @include input;
+            height: 5rem;
+            padding: 1rem;
+            resize: none;
+        }
+
+        &--button {
+            display: flex;
+            flex-direction: column;
+
+            @include tablet {
+                flex-direction: row-reverse;
+                width: 100%;
+                justify-content: end;
+            }
+
+            &--publish {
+                @include button;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 1.5rem;
+
+                @include tablet {
+                    width: 25%;
+                    align-content: center;
+                }
+            }
+
+            &--cancel {
+                @include button;
+                background-color: $white;
+                color: $brainflix-blue;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 1rem;
+
+                @include tablet {
+                    width: 25%;
+                    align-content: center;
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+}
