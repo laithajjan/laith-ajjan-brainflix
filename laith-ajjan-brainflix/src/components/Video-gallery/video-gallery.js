@@ -1,12 +1,17 @@
+// Import React and Link libraries, and some style files
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.scss";
 import "./video-gallery.scss"
 
+// Create a function component called 'VideoGallery'
 const VideoGallery = (props) => {
+    // Declare variables 'videos', 'getVideoById', and 'chosenVideo' to store video data and video details
     const videos = props.VideoDetails;
     const getVideoById = props.getVideoById;
     const chosenVideo = props.chosenVideo;
+    
+    // Return a div containing a list of videos, excluding the currently selected video
     return (
         <div className="video-next">
             <h5 className="video-next__header">NEXT VIDEOS</h5>
@@ -31,4 +36,5 @@ const VideoGallery = (props) => {
     )
 }
 
+// Export the 'VideoGallery' function component
 export default VideoGallery

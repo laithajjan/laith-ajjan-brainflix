@@ -1,16 +1,20 @@
+// Import React library and some images
 import React from "react";
 import './comments.scss';
 import Mohan from '../../assets/images/Mohan-muruge.jpg'
 import CommentLogo from '../../assets/images/add_comment.svg'
 
-
+// Create a function component called 'Comments'
 const Comments = (props) => {
+    // Declare a variable 'chosenVideo' to store the video chosen by the user
     const chosenVideo = props.chosenVideo;
 
+    // Create a function to format the date of the comment
     const dateComment = (date) => {
         return new Date(date).toLocaleDateString();
     }
 
+    // Return a div containing a form to submit a new comment, and a map of all the comments on the chosen video
     return (
         <div className="comments">
             <div className="comments__form">
@@ -39,4 +43,5 @@ const Comments = (props) => {
     )
 }
 
+// Export the 'Comments' function component
 export default Comments

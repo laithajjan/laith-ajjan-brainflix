@@ -1,3 +1,4 @@
+// Importing necessary CSS files and images
 import "../../App.scss"
 import "./upload.scss"
 import Thumbnail from "../../assets/images/Upload-video-preview.jpg"
@@ -5,18 +6,22 @@ import PublishLogo from "../../assets/images/publish.svg"
 import { Component } from "react"
 import { withRouter } from "react-router-dom";
 
-
+// Defining the UploadPage component
 class UploadPage extends Component {
+    // Defining the component state with two empty strings for title and description
     state = {
         title: "",
         description: "",
     };
 
+    // Function that updates the component state with the target value
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
         });
     };
+
+    // Function that checks if the title field is valid
     isTitleValid = () => {
         if (this.state.title.length < 1) {
             return false;
@@ -24,6 +29,8 @@ class UploadPage extends Component {
             return true;
         }
     };
+
+    // Function that checks if the description field is valid
     isDescriptionValid = () => {
         if (this.state.description.length < 1) {
             return false;
@@ -31,6 +38,8 @@ class UploadPage extends Component {
             return true;
         }
     };
+
+    // Function that checks if the form is valid
     isFormValid = () => {
         if (!this.state.title || !this.state.description) {
             return false;
@@ -44,6 +53,8 @@ class UploadPage extends Component {
             return true;
         }
     };
+
+    // Function that handles the form submission
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.isFormValid()) {
@@ -54,10 +65,12 @@ class UploadPage extends Component {
         }
     };
 
+    // Function that redirects to the home page after a successful form submission
     redirect() {
         this.props.history.push("/");
     }
 
+    // Render function that generates the HTML code for the component
     render() {
         return (
             <>
