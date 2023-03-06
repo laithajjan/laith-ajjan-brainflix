@@ -53,6 +53,7 @@
 
         &--title {
             @include date-like-views;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
     }
@@ -79,6 +80,7 @@
             @include desktop {
                 width: 100%;
                 margin-left: 2rem;
+                margin-bottom: 2rem;
             }
         }
 
@@ -94,6 +96,7 @@
 
         &--label {
             @include date-like-views;
+            font-weight: 600;
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
         }
@@ -128,8 +131,8 @@
                 margin-top: 1.5rem;
 
                 @include tablet {
-                    width: 25%;
-                    align-content: center;
+                    width: 12%;
+                    align-content: left;
                 }
             }
 
@@ -142,7 +145,7 @@
                 margin-top: 1rem;
 
                 @include tablet {
-                    width: 25%;
+                    width: 12%;
                     align-content: center;
                     margin-top: 1.5rem;
                 }
