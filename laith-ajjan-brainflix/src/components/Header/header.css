@@ -32,6 +32,15 @@
     left: 3rem;
   }
 }
+.header__logo--link {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (min-width: 1280px) {
+  .header__logo--link {
+    align-items: center;
+  }
+}
 @media screen and (min-width: 768px) {
   .header__avatar-button-big {
     width: 30%;
@@ -69,7 +78,7 @@
 }
 .header__search--avatar {
   height: 2.5rem;
-  width: 3rem;
+  width: 2.5rem;
   border-radius: 50%;
 }
 @media screen and (min-width: 768px) {
@@ -80,12 +89,13 @@
 .header__search--avatar-big {
   display: none;
   height: 2.5rem;
-  width: 3rem;
+  width: 2.5rem;
   border-radius: 50%;
 }
 @media screen and (min-width: 768px) {
   .header__search--avatar-big {
     display: flex;
+    margin-right: 10%;
   }
 }
 .header__search--input-container {
@@ -111,10 +121,17 @@
   border: none;
   font-family: "avenir";
   font-size: 1rem;
-  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .header__button {
-    width: 75%;
+    width: 50%;
+  }
+}
+.header__button--link {
+  text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .header__button--link {
+    width: 100%;
   }
 }/*# sourceMappingURL=header.css.map */

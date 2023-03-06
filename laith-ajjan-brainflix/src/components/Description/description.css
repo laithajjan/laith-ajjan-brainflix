@@ -1,10 +1,29 @@
+@font-face {
+  font-family: "avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
+.description {
+  font-family: "avenir";
+}
 @media screen and (min-width: 1280px) {
   .description {
-    margin: 1rem 0rem 1rem 1rem;
+    margin: 1rem 0rem 1rem 7rem;
   }
 }
 .description__title {
   margin: 1rem;
+  font-weight: 700;
 }
 @media screen and (min-width: 768px) {
   .description__title {
@@ -21,6 +40,7 @@
   margin: 0 1rem 0 1rem;
   display: flex;
   justify-content: space-between;
+  font-weight: 600;
 }
 @media screen and (min-width: 768px) {
   .description__info {
@@ -31,13 +51,13 @@
 .description__info--views {
   width: 8rem;
   color: #E1E1E1;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .description__info--likes {
   width: 8rem;
   color: #E1E1E1;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .description__info--logo {
@@ -65,12 +85,12 @@
 }
 .description__info--date {
   color: #E1E1E1;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.2rem;
 }
 .description__story {
   margin: 1.5rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 @media screen and (min-width: 768px) {
   .description__story {

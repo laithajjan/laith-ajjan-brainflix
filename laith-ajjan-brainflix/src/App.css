@@ -13,14 +13,12 @@
   src: url("../src/assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 700;
 }
-
 html {
   font-family: "avenir";
 }
 
 hr {
   border: 1px solid #E1E1E1;
-  margin: 0 1rem 0 1rem;
   padding: 0;
 }
 @media screen and (min-width: 768px) {
@@ -30,7 +28,7 @@ hr {
 }
 @media screen and (min-width: 1280px) {
   hr {
-    margin: 0 3rem 0 3rem;
+    margin: 0 0 2rem 2rem;
   }
 }
 
@@ -49,4 +47,9 @@ hr {
   .main {
     display: flex;
   }
-}/*# sourceMappingURL=app.css.map */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}/*# sourceMappingURL=App.css.map */

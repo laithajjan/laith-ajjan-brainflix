@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro.ttf") format("ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "avenir";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+}
 .comments {
   margin: 1rem;
 }
@@ -8,7 +23,7 @@
 }
 @media screen and (min-width: 1280px) {
   .comments {
-    margin: 1rem 3rem 1rem 3rem;
+    margin: 5rem 0rem 1rem 9rem;
   }
 }
 .comments__count {
@@ -36,7 +51,7 @@
 }
 .comments__form--logo {
   height: 2.5rem;
-  width: 3rem;
+  width: 2.5rem;
   border-radius: 50%;
   margin-top: 1.8rem;
 }
@@ -87,23 +102,22 @@
   border: none;
   font-family: "avenir";
   font-size: 1rem;
-  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .comments__form--button {
-    width: 35%;
+    width: 25%;
     margin-top: 0.8rem;
   }
 }
 .comments__wrap {
+  margin-top: 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   border-bottom: 2px solid #E1E1E1;
 }
 .comments__wrap--circle {
   height: 2.5rem;
-  width: 3rem;
+  width: 2.5rem;
   border-radius: 50%;
   margin: 1rem 1.5rem 0 0;
   background-color: #E1E1E1;
@@ -114,10 +128,11 @@
 }
 .comments__wrap--right {
   width: 85%;
+  margin-bottom: 1rem;
 }
 .comments__wrap--date {
   color: #E1E1E1;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
