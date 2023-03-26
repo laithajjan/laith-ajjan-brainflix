@@ -1,3 +1,4 @@
+// Import necessary libraries and components
 import React, { Component } from "react";
 import axios from "axios";
 import Video from "../Video/video";
@@ -5,12 +6,14 @@ import Description from "../Description/description";
 import Comments from "../Comments/comments";
 import VideoGallery from "../Video-gallery/video-gallery";
 
+// HomePage component
 class HomePage extends Component {
   state = {
     videoSuggest: [],
     chosenVideo: {},
   };
 
+  // Fetch video details by ID
   getVideoById = (id) => {
     axios
       .get(`http://localhost:8080/videos/${id}`)
@@ -22,6 +25,7 @@ class HomePage extends Component {
       .catch((err) => console.log(err));
   };
 
+  // Fetch initial data when the component mounts
   componentDidMount() {
     document.title = "BrainFlix";
     axios
@@ -36,6 +40,7 @@ class HomePage extends Component {
       .catch((err) => console.log(err));
   }
 
+  // Update chosen video when the video ID changes
   componentDidUpdate(prevProps, prevState) {
     const videoId =
       this.props.match.params.videoId || this.state.videoSuggest[0].id;
@@ -45,6 +50,7 @@ class HomePage extends Component {
     }
   }
 
+  // Render the HomePage component
   render() {
     return (
       <>
