@@ -1,3 +1,4 @@
+// Import necessary libraries, styles, and assets
 import "../../App.scss"
 import "./upload.scss"
 import Thumbnail from "../../assets/images/Upload-video-preview.jpg"
@@ -7,17 +8,21 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom"
 
+// UploadPage component for uploading videos
 class UploadPage extends Component {
     state = {
         title: "",
         description: "",
     };
 
+    // Handle changes in form input fields
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
         });
     };
+
+    // Validate title and description fields
     isTitleValid = () => {
         if (this.state.title.length < 1) {
             return false;
@@ -46,15 +51,17 @@ class UploadPage extends Component {
         }
     };
 
+    // Handle form submission
     handleSubmit = (event) => {
         event.preventDefault();
-
+        // Send a POST request with video data
         axios
             .post('http://localhost:8080/videos', {
                 title: event.target.title.value,
                 description: event.target.description.value
             }).then(this.handleSubmit);
 
+        // Show success or error messages
         if (this.isFormValid()) {
             alert("Upload Successful!");
             this.redirect();
@@ -67,7 +74,7 @@ class UploadPage extends Component {
         this.props.history.push("/");
     }
 
-
+    // Render the upload page
     render() {
         return (
             <>
