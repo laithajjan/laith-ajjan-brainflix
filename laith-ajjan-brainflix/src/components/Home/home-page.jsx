@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Video from "../../components/Video/video";
-import Description from "../../components/Description/description";
-import Comments from "../../components/Comments/comments";
-import VideoGallery from "../../components/Video-gallery/video-gallery";
+import Video from "../Video/video";
+import Description from "../Description/description";
+import Comments from "../Comments/comments";
+import VideoGallery from "../Video-gallery/video-gallery";
 
 class HomePage extends Component {
   state = {
