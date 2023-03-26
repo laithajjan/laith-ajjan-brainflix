@@ -1,27 +1,23 @@
-// Importing necessary CSS files and images
 import "../../App.scss"
 import "./upload.scss"
 import Thumbnail from "../../assets/images/Upload-video-preview.jpg"
 import PublishLogo from "../../assets/images/publish.svg"
 import { Component } from "react"
 import { withRouter } from "react-router-dom";
+import axios from "axios";
+import { Link } from "react-router-dom"
 
-// Defining the UploadPage component
 class UploadPage extends Component {
-    // Defining the component state with two empty strings for title and description
     state = {
         title: "",
         description: "",
     };
 
-    // Function that updates the component state with the target value
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
         });
     };
-
-    // Function that checks if the title field is valid
     isTitleValid = () => {
         if (this.state.title.length < 1) {
             return false;
@@ -29,8 +25,6 @@ class UploadPage extends Component {
             return true;
         }
     };
-
-    // Function that checks if the description field is valid
     isDescriptionValid = () => {
         if (this.state.description.length < 1) {
             return false;
@@ -38,8 +32,6 @@ class UploadPage extends Component {
             return true;
         }
     };
-
-    // Function that checks if the form is valid
     isFormValid = () => {
         if (!this.state.title || !this.state.description) {
             return false;
@@ -54,9 +46,15 @@ class UploadPage extends Component {
         }
     };
 
-    // Function that handles the form submission
     handleSubmit = (event) => {
         event.preventDefault();
+
+        axios
+            .post('http://localhost:8080/videos', {
+                title: event.target.title.value,
+                description: event.target.description.value
+            }).then(this.handleSubmit);
+
         if (this.isFormValid()) {
             alert("Upload Successful!");
             this.redirect();
@@ -65,12 +63,11 @@ class UploadPage extends Component {
         }
     };
 
-    // Function that redirects to the home page after a successful form submission
     redirect() {
         this.props.history.push("/");
     }
 
-    // Render function that generates the HTML code for the component
+
     render() {
         return (
             <>
@@ -89,7 +86,7 @@ class UploadPage extends Component {
                                 <img className='upload__hero--img' src={Thumbnail} />
                             </div>
                             <div className="upload__form--input-desktop">
-                                <label className='upload__form--label' for="title"  >TITLE YOUR VIDEO</label>
+                                <label className='upload__form--label' htmlFor="title"  >TITLE YOUR VIDEO</label>
                                 <input
                                     type="text"
                                     className='upload__form--input'
@@ -98,7 +95,7 @@ class UploadPage extends Component {
                                     onChange={this.handleChange}
                                     value={this.state.title}
                                 ></input>
-                                <label className='upload__form--label' for="description">ADD A VIDEO DESCRIPTION</label>
+                                <label className='upload__form--label' htmlFor="description">ADD A VIDEO DESCRIPTION</label>
                                 <textarea
                                     type="text"
                                     className='upload__form--textarea'
@@ -112,7 +109,7 @@ class UploadPage extends Component {
                         <hr className="upload__border"></hr>
                         <div className='upload__form--button'>
                             <button type="submit" className='upload__form--button--publish' ><img src={PublishLogo} />PUBLISH<div></div></button>
-                            <button className='upload__form--button--cancel'><img src={PublishLogo} />CANCEL<div></div></button>
+                            <Link className='upload__form--button--link' to='/'><button className='upload__form--button--cancel' type="reset" ><img src={PublishLogo} />CANCEL<div></div></button></Link>
                         </div>
                     </form>
 
