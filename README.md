@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-## BrainFlix API
+### BrainFlix API
 
 The BrainFlix API is found at https://github.com/laithajjan/laith-ajjan-brainflix-api
 
