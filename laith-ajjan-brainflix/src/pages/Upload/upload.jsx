@@ -1,111 +1,85 @@
-// Import necessary libraries, styles, and assets
-import "../../App.scss"
-import "./upload.scss"
-import Thumbnail from "../../assets/images/Upload-video-preview.jpg"
-import PublishLogo from "../../assets/images/publish.svg"
-import { Component } from "react"
+import "../../App.scss";
+import "./upload.scss";
+import Thumbnail from "../../assets/images/Upload-video-preview.jpg";
+import PublishLogo from "../../assets/images/publish.svg";
+import { Component } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-// UploadPage component for uploading videos
 class UploadPage extends Component {
     state = {
         title: "",
         description: "",
     };
 
-    // Handle changes in form input fields
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
         });
     };
 
-    // Validate title and description fields
-    isTitleValid = () => {
-        if (this.state.title.length < 1) {
-            return false;
-        } else {
-            return true;
-        }
-    };
-    isDescriptionValid = () => {
-        if (this.state.description.length < 1) {
-            return false;
-        } else {
-            return true;
-        }
-    };
     isFormValid = () => {
-        if (!this.state.title || !this.state.description) {
-            return false;
-        }
-        if (!this.isTitleValid()) {
-            return false;
-        }
-        if (!this.isDescriptionValid()) {
-            return false;
-        } else {
-            return true;
-        }
+        const { title, description } = this.state;
+        return title.trim() !== "" && description.trim() !== "";
     };
 
-    // Handle form submission
     handleSubmit = (event) => {
         event.preventDefault();
-        // Send a POST request with video data
-        axios
-            .post('http://localhost:8080/videos', {
-                title: event.target.title.value,
-                description: event.target.description.value
-            }).then(this.handleSubmit);
-
-        // Show success or error messages
         if (this.isFormValid()) {
-            alert("Upload Successful!");
-            this.redirect();
+            axios
+                .post("http://localhost:8080/videos", {
+                    title: this.state.title,
+                    description: this.state.description,
+                })
+                .then(() => {
+                    alert("Upload Successful!");
+                    this.props.history.push("/");
+                })
+                .catch((error) => {
+                    console.error("Error during video upload:", error);
+                    alert("Upload failed. Please try again.");
+                });
         } else {
             alert("Upload must have a Title and Description");
         }
     };
 
-    redirect() {
-        this.props.history.push("/");
-    }
-
-    // Render the upload page
     render() {
         return (
             <>
-                <hr className="top-border"></hr>
-                <article className='upload'>
-                    <h1 className='upload__title'>Upload Video</h1>
-                    <hr className="upload__border"></hr>
-                    <div className='upload__hero'>
-                        <p className='upload__hero--title'>VIDEO THUMBNAIL</p>
-                        <img className='upload__hero--img' src={Thumbnail} alt={Thumbnail} />
+                <hr className="top-border" />
+                <article className="upload">
+                    <h1 className="upload__title">Upload Video</h1>
+                    <hr className="upload__border" />
+                    <div className="upload__hero">
+                        <p className="upload__hero--title">VIDEO THUMBNAIL</p>
+                        <img className="upload__hero--img" src={Thumbnail} alt="Video Thumbnail" />
                     </div>
-                    <form className='upload__form' onSubmit={this.handleSubmit}>
+                    <form className="upload__form" onSubmit={this.handleSubmit}>
                         <div className="upload__form--wrap-desktop">
                             <div className="upload__form--hero-desktop">
-                                <p className='upload__hero--title'>VIDEO THUMBNAIL</p>
-                                <img className='upload__hero--img' src={Thumbnail} />
+                                <p className="upload__hero--title">VIDEO THUMBNAIL</p>
+                                <img className="upload__hero--img" src={Thumbnail} alt="Video Thumbnail" />
                             </div>
                             <div className="upload__form--input-desktop">
-                                <label className='upload__form--label' htmlFor="title"  >TITLE YOUR VIDEO</label>
+                                <label className="upload__form--label" htmlFor="title">
+                                    TITLE YOUR VIDEO
+                                </label>
                                 <input
                                     type="text"
-                                    className='upload__form--input'
+                                    className="upload__form--input"
                                     name="title"
                                     placeholder="Add a title to your video"
                                     onChange={this.handleChange}
                                     value={this.state.title}
-                                ></input>
-                                <label className='upload__form--label' htmlFor="description">ADD A VIDEO DESCRIPTION</label>
+                                />
+                                <label className="upload__form--label" htmlFor="description">
+                                    ADD A VIDEO DESCRIPTION
+                                </label>
                                 <textarea
                                     type="text"
-                                    className='upload__form--textarea'
+                                    className="upload__form--textarea"
                                     name="description"
                                     placeholder="Add a description to your video"
                                     onChange={this.handleChange}
@@ -113,17 +87,25 @@ class UploadPage extends Component {
                                 />
                             </div>
                         </div>
-                        <hr className="upload__border"></hr>
-                        <div className='upload__form--button'>
-                            <button type="submit" className='upload__form--button--publish' ><img src={PublishLogo} />PUBLISH<div></div></button>
-                            <Link className='upload__form--button--link' to='/'><button className='upload__form--button--cancel' type="reset" ><img src={PublishLogo} />CANCEL<div></div></button></Link>
+                        <hr className="upload__border" />
+                        <div className="upload__form--button">
+                            <button type="submit" className="upload__form--button--publish">
+                                <img src={PublishLogo} alt="Publish" />
+                                PUBLISH
+                                <div />
+                            </button>
+                            <Link className="upload__form--button--link" to="/">
+                                <button className="upload__form--button--cancel" type="reset">
+                                    <img src={PublishLogo} alt="Cancel" />
+                                    CANCEL
+                                    <div />
+                                </button>
+                            </Link>
                         </div>
                     </form>
-
                 </article>
             </>
-        )
+        );
     }
 }
-
 export default withRouter(UploadPage);
